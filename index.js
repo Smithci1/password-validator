@@ -1,28 +1,42 @@
-const validatePassword = ([]) => {
-    let valid = []
-    let lowerCase = /[a - z]/
-    let upperCase = /[ A - Z]/
-    let num = /[0 - 9]/
+let valid = true
 
-
-switch (valid.length <= 8 ){
-    case true:
-        break;
-}switch (valid == lowerCase){
-    case true:
-        break;
-}switch (valid == upperCase){
-    case true:
-        break;
-}switch (valid == num){
-    case true:
-        break;
-        default: false
+const passwordPattern = {
+    charLength: function() {
+        if (password.value.length() >= 8){
+            return valid
+        } 
+    },
+    Case: function() {
+        if ((password.value.toLowerCase()) && (password.value.toUpperCase())) {
+            return valid    
+        }
+    },
+    num: function(){
+        if (password.value === [0-9]){
+            return valid
+        }    
+    },
+    specialChar: function(){
+        let sc = []
+    }
 }
 
-    
-    
+const validatePassword = (password) => {
+    let lengthCase = ((passwordPattern.charLength) && (passwordPattern.Case))  
+    let numSc = ((passwordPattern.num) && (passwordPattern.specialChar))
 
-
+    if (lengthCase && numSc) {
+        return true
+        
+    }else false
+        
+        
+        
+        
+        
+        
+        
+        
+        
 }
-module.exports = validatePassword([])
+module.exports = validatePassword
